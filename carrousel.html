@@ -1,47 +1,39 @@
 <!DOCTYPE html>
-
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
+  <div class="container">
+    <button class="left-arrow">⇦</button>
 
-<button class="left-arrow">⇦</button>
-<button class="right-arrow">⇨</button>
+    <ul class="carousel">
+      <li class="carousel__item"><img src="img/1.png" alt="image"></li>
+      <li class="carousel__item"><img src="img/2.png" alt="image"></li>
+      <li class="carousel__item"><img src="img/3.png" alt="image"></li>
+      <li class="carousel__item"><img src="img/4.png" alt="image"></li>
+      <li class="carousel__item"><img src="img/5.png" alt="image"></li>
+      <li class="carousel__item"><img src="img/6.png" alt="image"></li>
+      <li class="carousel__item"><img src="img/7.png" alt="image"></li>
+      <li class="carousel__item"><img src="img/8.png" alt="image"></li>
+      <li class="carousel__item"><img src="img/9.png" alt="image"></li>
+      <li class="carousel__item"><img src="img/10.png" alt="image"></li>
+    </ul>
 
+    <button class="right-arrow">⇨</button>
+  </div>
 
-<ul>
-  <li><img src="https://js.cx/carousel/1.png"></li>
-  <li><img src="https://js.cx/carousel/2.png"></li>
-  <li><img src="https://js.cx/carousel/3.png"></li>
-  <li><img src="https://js.cx/carousel/4.png"></li>
-  <li><img src="https://js.cx/carousel/5.png"></li>
-  <li><img src="https://js.cx/carousel/6.png"></li>
-  <li><img src="https://js.cx/carousel/7.png"></li>
-  <li><img src="https://js.cx/carousel/8.png"></li>
-  <li><img src="https://js.cx/carousel/9.png"></li>
-  <li><img src="https://js.cx/carousel/10.png"></li>
-</ul>
+  <script>
+    const elem = document.querySelector('.carousel'),
+      btns = document.querySelectorAll('button');
 
+    [...btns].map(el => el.addEventListener('click', move));
 
-<script>
-  // этот код помечает картинки цифрами, для удобства разработки
-  // его можно убрать, если не нужен
-  var lis = document.getElementsByTagName('li');
-  for (var i = 0; i < lis.length; i++) {
-    lis[i].style.position = 'relative';
-    var span = document.createElement('span');
-    span.style.cssText = 'position:absolute;left:0;top:0';
-    span.innerHTML = i + 1;
-    lis[i].appendChild(span);
-  }
-</script>
+    function move() {
+      this.className === 'left-arrow' ? elem.scrollLeft -= elem.clientWidth : elem.scrollLeft += elem.clientWidth
+    }
 
-<script>
-  // ваш код..
-</script>
+  </script>
 </body>
-
 </html>

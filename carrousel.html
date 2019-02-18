@@ -31,6 +31,8 @@
     [...btns].map(el => el.addEventListener('click', move));
 
     function move() {
+      console.log(elem.clientWidth);
+      console.log(elem.scrollWidth);
       this.className === 'left-arrow' ? elem.scrollLeft -= elem.clientWidth : elem.scrollLeft += elem.clientWidth
     }
 

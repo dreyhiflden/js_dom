@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <button class="left-arrow">⇦</button>
+
+    <ul class="carousel">
+      <li class="carousel__item"><img src="img/1.png" alt="image"></li>
+      <li class="carousel__item"><img src="img/2.png" alt="image"></li>
+      <li class="carousel__item"><img src="img/3.png" alt="image"></li>
+      <li class="carousel__item"><img src="img/4.png" alt="image"></li>
+      <li class="carousel__item"><img src="img/5.png" alt="image"></li>
+      <li class="carousel__item"><img src="img/6.png" alt="image"></li>
+      <li class="carousel__item"><img src="img/7.png" alt="image"></li>
+      <li class="carousel__item"><img src="img/8.png" alt="image"></li>
+      <li class="carousel__item"><img src="img/9.png" alt="image"></li>
+      <li class="carousel__item"><img src="img/10.png" alt="image"></li>
+    </ul>
+
+    <button class="right-arrow">⇨</button>
+  </div>
+
+  <script>
+    const elem = document.querySelector('.carousel'),
+      btns = document.querySelectorAll('button');
+
+    [...btns].map(el => el.addEventListener('click', move));
+
+    function move() {
+      console.log(elem.clientWidth);
+      console.log(elem.scrollWidth);
+      this.className === 'left-arrow' ? elem.scrollLeft -= elem.clientWidth : elem.scrollLeft += elem.clientWidth
+    }
+
+  </script>
+</body>
+</html>

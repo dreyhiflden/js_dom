@@ -2,6 +2,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
+  <title>Carousel</title>
 </head>
 <body>
 
@@ -31,9 +32,7 @@
     [...btns].map(el => el.addEventListener('click', move));
 
     function move() {
-      console.log(elem.clientWidth);
-      console.log(elem.scrollWidth);
-      this.className === 'left-arrow' ? elem.scrollLeft -= elem.clientWidth : elem.scrollLeft += elem.clientWidth
+      this.className === 'left-arrow' ? elem.scrollLeft -= elem.clientWidth : elem.scrollLeft += elem.clientWidth;
     }
 
   </script>

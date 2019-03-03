@@ -27,8 +27,8 @@ function placeBall(event) {
     leftCoordinate = cords.width - (borderWidth + ballRadius);
   }
 
-  ball.style.cssText = `top:${topCoordinate}px;
+  ball.style.cssText = `top: ${topCoordinate}px;
    margin-top: -${ballRadius + borderWidth}px;
    margin-left: -${ballRadius + borderWidth}px;
-   left:${leftCoordinate}px`;
-}
+   left: ${leftCoordinate}px`;
+};

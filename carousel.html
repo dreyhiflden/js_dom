@@ -26,10 +26,10 @@
   </div>
 
   <script>
-    const elem = document.querySelector('.carousel'),
-      btns = document.querySelectorAll('button');
+    const elem = document.querySelector('.carousel');
 
-    [...btns].map(el => el.addEventListener('click', move));
+    [...document.querySelectorAll('button')]
+      .forEach(el => el.addEventListener('click', move));
 
     function move() {
       this.className === 'left-arrow' ? elem.scrollLeft -= elem.clientWidth : elem.scrollLeft += elem.clientWidth;
